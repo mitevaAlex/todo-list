@@ -1,0 +1,96 @@
+#lists-container {
+    border: 1px solid #F0F0F0;
+    border-radius: 15px;
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+    overflow-y: scroll;
+}
+
+#lists-container .list {
+    background: #D4DFC7;
+    width: 330px;
+    height: 300px;
+    border-radius: 5px;
+    padding: 20px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+#lists-container .list-header {
+    color: #626d56;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#lists-container .list-header h4 {
+    font-size: 22px;
+    font-weight: 600;
+    width: 100%;
+    max-width: 70%;
+}
+
+#lists-container .list-header .menu-wrapper .fa-solid {
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#lists-container .task-container {
+    margin-bottom: 15px;
+}
+
+#lists-container .task-container input[type="checkbox"] {
+    accent-color: #5c664f;
+    margin-bottom: 10px;
+}
+
+#lists-container .task-container label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#lists-container .task-container input[type="checkbox"]:checked+label,
+#lists-container .task-container input[type="checkbox"]:checked+label+div.task-content{
+    text-decoration: line-through;
+}
+
+#lists-container .task-content {
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+#lists-container .task-content p {
+    margin-bottom: 6px;
+    line-height: 20px;
+}
+
+#lists-container .task-content time {
+    color: #70805d;
+}
+
+#lists-container .task-content .fa-solid{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#lists-container #new-list-btn {
+    background: #e1e1e1;
+    overflow-y: unset;
+    position: relative;
+    cursor: pointer;
+}
+
+#lists-container #new-list-btn .fa-plus {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

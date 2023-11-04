@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/index.css">
+    <title>My Todo List</title>
+</head>
+
+<body>
+    <div id="create-form-container">
+        <form action="#">
+            <div class="list-content">
+                <label for="list-title">List Title</label>
+                <input type="text" name="list-title" id="list-title">
+                <div class="tasks">
+                    <div class="task">
+                        <label for="task1">Task Title</label>
+                        <input type="text" name="task1" id="task1">
+                        <label for="description1">Description</label>
+                        <textarea name="description1" id="description1" cols="30" rows="3"></textarea>
+                        <label for="deadline1">Deadline</label>
+                        <input type="datetime-local" name="deadline1" id="deadline1">
+                    </div>
+                    
+                    <div class="task">
+                        <label for="task1">Task Title</label>
+                        <input type="text" name="task1" id="task1">
+                        <label for="description1">Description</label>
+                        <textarea name="description1" id="description1" cols="30" rows="3"></textarea>
+                        <label for="deadline1">Deadline</label>
+                        <input type="datetime-local" name="deadline1" id="deadline1">
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrapper">
+                <button type="reset">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+                <button class="new-task-btn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button type="submit">
+                    <i class="fa-solid fa-check"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div id="page-bg">
+        <div id="page-container">
+            <h1>Task Board</h1>
+            <div id="lists-container">
+                <div class="list">
+                    <div class="list-header">
+                        <h4>List Title</h4>
+                        <div class="menu-wrapper">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task1" id="task1">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task2" id="task2">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task3" id="task3">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h4>List Title</h4>
+                        <div class="menu-wrapper">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task4" id="task4">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h4>List Title</h4>
+                        <div class="menu-wrapper">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task5" id="task5">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h4>List Title</h4>
+                        <div class="menu-wrapper">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task6" id="task6">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h4>List Title</h4>
+                        <div class="menu-wrapper">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task7" id="task7">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h4>List Title</h4>
+                        <div class="menu-wrapper">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task8" id="task8">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h4>List Title</h4>
+                        <div class="menu-wrapper">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task9" id="task9">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h4>List Title</h4>
+                        <div class="menu-wrapper">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="task-container">
+                        <input type="checkbox" name="task0" id="task0">
+                        <label for="task1">Task 1</label>
+                        <div class="task-content">
+                            <p>
+                                <i class="fa-solid fa-pencil"></i>
+                                Description is very long and hard
+                                description to do and somenting something
+                            </p>
+                            <time datetime="2023-11-03 20:00">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                03.11.2023 20:00
+                            </time>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="new-list-btn" class="list">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

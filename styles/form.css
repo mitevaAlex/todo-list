@@ -1,0 +1,68 @@
+#create-form-container {
+    width: 550px;
+    height: 500px;
+    border-radius: 10px;
+    background: #D4DFC7;
+    box-shadow: 0px 0px 10px 3px #788568;
+    padding: 40px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+#create-form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#create-form-container form .list-content {
+    margin-bottom: 20px;
+}
+
+#create-form-container form .tasks .task {
+    border: 1px solid #7885684d;
+    padding: 25px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+} 
+
+#create-form-container form label {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#create-form-container form input,
+#create-form-container form textarea {
+    display: block;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#create-form-container form input:focus-visible,
+#create-form-container form textarea:focus-visible {
+    outline: none;
+}
+
+#create-form-container form .btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#create-form-container form .btn-wrapper button {
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background: #99a986;
+    cursor: pointer;
+}

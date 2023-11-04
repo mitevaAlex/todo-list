@@ -1,0 +1,28 @@
+#page-bg {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* javascript handled */
+    filter: blur(5px);
+}
+
+#page-container {
+    background: #fff;
+    width: 100%;
+    max-width: 95%;
+    height: 100%;
+    max-height: 95%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#page-container h1 {
+    font-size: 40px;
+    font-weight: 600;
+}
