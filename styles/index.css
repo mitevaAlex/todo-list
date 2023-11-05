@@ -27,3 +27,8 @@ body {
     background-clip: content-box;
 }
 
+footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 7px;
+}
