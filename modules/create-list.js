@@ -1,4 +1,3 @@
-import { html, render } from '../node_modules/lit-html/lit-html.js';
 import { listsView } from './lists.js';
 
 export let pageBg = document.getElementById('page-bg');
@@ -7,7 +6,7 @@ export let formContainer = document.getElementById('create-form-container');
 export function createListView(event) {
     pageBg.style.filter = 'blur(5px)';
     formContainer.style.display = 'block';
-    
+
     let form = document.createElement('form');
     let createFormContent = `
         <div class="list-content">
