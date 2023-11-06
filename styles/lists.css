@@ -101,6 +101,7 @@
     #lists-container {
         padding: 10px;
         gap: 10px;
+        justify-content: center;
     }
 
     #lists-container .list {
