@@ -18,6 +18,8 @@
     padding-right: 10px;
     box-sizing: border-box;
     overflow-y: scroll;
+
+    overflow-wrap: break-word;
 }
 
 #lists-container .list-header {
@@ -57,7 +59,7 @@
 }
 
 #lists-container .task-container input[type="checkbox"]:checked+label,
-#lists-container .task-container input[type="checkbox"]:checked+label+div.task-content{
+#lists-container .task-container input[type="checkbox"]:checked+label+div.task-content {
     text-decoration: line-through;
 }
 
@@ -75,14 +77,13 @@
     color: #70805d;
 }
 
-#lists-container .task-content .fa-solid{
+#lists-container .task-content .fa-solid {
     display: inline-block;
     margin-right: 5px;
 }
 
 #lists-container #new-list-btn {
     background: #e1e1e1;
-    overflow-y: unset;
     position: relative;
     cursor: pointer;
 }
@@ -93,4 +94,34 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Extra small devices */
+@media screen and (max-width: 600px) {
+    #lists-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    #lists-container .list {
+        height: 250px;
+        padding: 15px;
+        padding-right: 3px;
+    }
+
+    #lists-container .list-header {
+        margin-bottom: 10px;
+    }
+
+    #lists-container .list-header h4 {
+        font-size: 16px;
+    }
+
+    #lists-container .task-container label {
+        font-size: 16px;
+    }
+
+    #lists-container .task-content {
+        font-size: 15px;
+    }
 }

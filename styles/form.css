@@ -13,7 +13,7 @@
     z-index: 1;
     overflow-y: scroll;
 
-    display:none;
+    display: none;
 }
 
 #create-form-container form {
@@ -31,7 +31,7 @@
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 10px;
-} 
+}
 
 #create-form-container form label {
     font-size: 20px;
@@ -66,4 +66,39 @@
     padding: 10px;
     background: #99a986;
     cursor: pointer;
+}
+
+/* Extra small devices */
+@media screen and (max-width: 600px) {
+    #create-form-container {
+        width: 300px;
+        height: 335px;
+        padding: 15px;
+    }
+
+    #create-form-container form .tasks .task {
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    #create-form-container form label {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    #create-form-container form input,
+    #create-form-container form textarea {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+
+    #create-form-container form textarea {
+        max-width: 90%;
+    }
+
+    #create-form-container form .btn-wrapper button {
+        font-size: 18px;
+        padding: 7px;
+    }
 }

@@ -7,6 +7,7 @@ let wantedList;
 
 export function editListView(event) {
     pageBg.style.filter = 'blur(5px)';
+    pageBg.style.pointerEvents = 'none';
     formContainer.style.display = 'block';
 
     listId = event.target.parentElement.id;

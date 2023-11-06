@@ -5,6 +5,7 @@ export let formContainer = document.getElementById('create-form-container');
 
 export function createListView(event) {
     pageBg.style.filter = 'blur(5px)';
+    pageBg.style.pointerEvents = 'none';
     formContainer.style.display = 'block';
 
     let form = document.createElement('form');
@@ -71,6 +72,7 @@ export function addTaskInput() {
 
 export function closeForm(event) {
     pageBg.style.filter = 'none';
+    pageBg.style.pointerEvents = 'auto';
     formContainer.style.display = 'none';
     formContainer.innerHTML = '';
 }
