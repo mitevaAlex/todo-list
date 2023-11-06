@@ -74,8 +74,30 @@ function taskView(data, list) {
     }
 
     checkbox.addEventListener('click', isCheckedActions);
-
-    list.appendChild(task);
+    
+    let time = task.querySelector('time');
+    time.addEventListener('DOMContentLoaded', function(event) {
+        console.log(event.target.dateTime);
+        let deadline = new Date(event.target.dateTime);
+        let now = new Date();
+        let milliseconds = deadline.getTime() - now.getTime();
+        if (milliseconds > 0) {
+          window.setTimeout(function() {
+            task.style.color = '#a3a3a3';
+            time.style.color = '#a3a3a3';
+            checkbox.setAttribute('disabled', '');
+          }, milliseconds);
+        }
+        else {
+          task.style.color = '#a3a3a3';
+          time.style.color = '#a3a3a3';
+          checkbox.setAttribute('disabled', '');
+        } 
+      });
+      list.appendChild(task);
+      
+      let event = new Event('DOMContentLoaded');
+      time.dispatchEvent(event);
 }
 
 function deleteList(event) {
