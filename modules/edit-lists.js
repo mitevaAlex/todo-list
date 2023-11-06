@@ -1,5 +1,4 @@
-import { html, render } from '../node_modules/lit-html/lit-html.js';
-import { addTaskInput, closeForm, formContainer, isFormDataValid, pageBg } from './create-list.js';
+import { closeForm, formContainer, isFormDataValid, pageBg, setFormButtons } from './create-list.js';
 import { listsView } from './lists.js';
 
 let listId;
@@ -14,31 +13,33 @@ export function editListView(event) {
     lists = JSON.parse(localStorage.lists);
     wantedList = lists.find(list => list._id === listId);
 
-    let editForm = html`
-        <form>
-            <div class="list-content">
-                <label>
-                    List Title
-                    <input type="text" name="listTitle" value="${wantedList.listTitle}">
-                </label>
-                <div class="tasks">
-
-                </div>
+    let form = document.createElement('form');
+    let editFormContent = `
+        <div class="list-content">
+            <label>
+                List Title
+                <input type="text" name="listTitle" value="${wantedList.listTitle}">
+            </label>
+            <div class="tasks">
             </div>
-            <div class="btn-wrapper">
-                <button type="reset" @click=${closeForm}>
-                    <i class="fa-solid fa-trash-can"></i>
-                </button>
-                <button type="button" class="new-task-btn" @click=${addTaskInput}>
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <button type="submit" @click=${editList}>
-                    <i class="fa-solid fa-check"></i>
-                </button>
-            </div>
-        </form>`;
-
-    render(editForm, formContainer);
+        </div>
+        <div class="btn-wrapper">
+            <button type="reset">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+            <button type="button" class="new-task-btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <button type="submit">
+                <i class="fa-solid fa-check"></i>
+            </button>
+        </div>`;
+    form.innerHTML = editFormContent;
+    formContainer.appendChild(form);
+    
+    setFormButtons();
+    let submitBtn = document.querySelector('button[type="submit"]');
+    submitBtn.addEventListener('click', editList);
 
     addEditTaskInputs(wantedList.tasks);
 }

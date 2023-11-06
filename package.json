@@ -1,7 +1,4 @@
 {
   "main": "app.js",
-  "type": "module",
-  "dependencies": {
-    "lit-html": "^3.0.2"
-  }
+  "type": "module"
 }

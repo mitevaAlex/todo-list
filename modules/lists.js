@@ -1,41 +1,60 @@
-import { html, render } from '../node_modules/lit-html/lit-html.js';
+import { createListView } from './create-list.js';
 import { editListView } from './edit-lists.js';
 
-export function listsView() {
-    let listsContainer = document.querySelector('#lists-container');
-    let listsInfo = JSON.parse(localStorage.getItem('lists'));
+let listsContainer = document.querySelector('#lists-container');
 
-    let lists = html`
-        ${(listsInfo.length !== 0)
-            ? listsInfo.map(listView)
-            : html``}
-        <div id="new-list-btn" class="list">
-            <i class="fa-solid fa-plus"></i>
-        </div>`;
-    render(lists, listsContainer);
+export function listsView() {
+    clearListsContainer();
+
+    let listsInfo = JSON.parse(localStorage.getItem('lists'));
+    for (let i = 0; i < listsInfo.length; i++) {
+        listView(listsInfo[i]);
+    }
+
+    let newListBtn = document.createElement('div');
+    newListBtn.classList.add('list');
+    newListBtn.setAttribute('id', 'new-list-btn');
+    let newListBtnContent = `<i class="fa-solid fa-plus"></i>`;
+    newListBtn.innerHTML = newListBtnContent;
+    newListBtn.addEventListener('click', createListView);
+    listsContainer.appendChild(newListBtn);
 }
 
 function listView(data) {
-    let tasksInfo = data.tasks;
-    return html`
-        <div class="list">
-            <div class="list-header">
-                <h4>${data.listTitle}</h4>
-                <div class="menu-wrapper" id="${data._id}">
-                    <i class="fa-solid fa-pen-to-square" @click=${editListView}></i>
-                    <i class="fa-solid fa-trash-can" @click=${deleteList}></i>
-                </div>
+    let list = document.createElement('div');
+    list.classList.add('list');
+    let listContent = `
+        <div class="list-header">
+            <h4>${data.listTitle}</h4>
+            <div class="menu-wrapper" id="${data._id}">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-solid fa-trash-can"></i>
             </div>
-            ${tasksInfo.map(taskView)}
         </div>`;
+    list.innerHTML = listContent;
+
+    let editBtn = list.querySelector('.fa-pen-to-square');
+    editBtn.addEventListener('click', editListView);
+
+    let deleteBtn = list.querySelector('.fa-trash-can');
+    deleteBtn.addEventListener('click', deleteList);
+
+    let tasksInfo = data.tasks;
+    for (let i = 0; i < tasksInfo.length; i++) {
+        taskView(tasksInfo[i], list);
+    }
+
+    listsContainer.appendChild(list);
 }
 
-function taskView(data) {
+function taskView(data, list) {
     let formatedDeadline = new Date(data.deadline)
         .toLocaleString('en-GB', { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-    return html`
-        <div class="task-container">
-            <input type="checkbox" name="taskTitle" id="${data._id}" ?checked=${data.checked} @click=${isCheckedActions}>
+
+    let task = document.createElement('div');
+    task.classList.add('task-container');
+    let taskContent = `
+            <input type="checkbox" name="taskTitle" id="${data._id}">
             <label for="${data._id}">${data.taskTitle}</label>
             <div class="task-content">
                 <p>
@@ -46,8 +65,17 @@ function taskView(data) {
                     <i class="fa-solid fa-calendar-days"></i>
                     ${formatedDeadline}
                 </time>
-            </div>
-        </div>`;
+            </div>`;
+    task.innerHTML = taskContent;
+
+    let checkbox = task.querySelector('input[type="checkbox"]');
+    if (data.checked) {
+        checkbox.setAttribute('checked', '');
+    }
+
+    checkbox.addEventListener('click', isCheckedActions);
+
+    list.appendChild(task);
 }
 
 function deleteList(event) {
@@ -82,9 +110,13 @@ function isCheckedActions(event) {
 
     if (isChecked) {
         lists[indexWantedList].tasks[indexWantedTask].checked = false;
-    } else  {
+    } else {
         lists[indexWantedList].tasks[indexWantedTask].checked = true;
     }
 
     localStorage.setItem('lists', JSON.stringify(lists));
+}
+
+function clearListsContainer() {
+    listsContainer.innerHTML = '';
 }

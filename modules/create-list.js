@@ -7,34 +7,45 @@ export let formContainer = document.getElementById('create-form-container');
 export function createListView(event) {
     pageBg.style.filter = 'blur(5px)';
     formContainer.style.display = 'block';
-
-    let createForm = html`
-        <form>
-            <div class="list-content">
-                <label>
-                    List Title
-                    <input type="text" name="listTitle">
-                </label>
-                <div class="tasks">
-                    
-                </div>
+    
+    let form = document.createElement('form');
+    let createFormContent = `
+        <div class="list-content">
+            <label>
+                List Title
+                <input type="text" name="listTitle">
+            </label>
+            <div class="tasks">
+                
             </div>
-            <div class="btn-wrapper">
-                <button type="reset" @click=${closeForm}>
-                    <i class="fa-solid fa-trash-can"></i>
-                </button>
-                <button type="button" class="new-task-btn" @click=${addTaskInput}>
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-                <button type="submit" @click=${saveNewList}>
-                    <i class="fa-solid fa-check"></i>
-                </button>
-            </div>
-        </form>`;
+        </div>
+        <div class="btn-wrapper">
+            <button type="reset">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+            <button type="button" class="new-task-btn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <button type="submit">
+                <i class="fa-solid fa-check"></i>
+            </button>
+        </div>`;
+    form.innerHTML = createFormContent;
+    formContainer.appendChild(form);
 
-    render(createForm, formContainer);
+    setFormButtons();
+    let submitBtn = document.querySelector('button[type="submit"]');
+    submitBtn.addEventListener('click', saveNewList);
 
     addTaskInput();
+}
+
+export function setFormButtons(){
+    let resetBtn = document.querySelector('button[type="reset"]');
+    resetBtn.addEventListener('click', closeForm);
+
+    let newTaskBtn = document.querySelector('button.new-task-btn');
+    newTaskBtn.addEventListener('click', addTaskInput);
 }
 
 export function addTaskInput() {
@@ -62,10 +73,7 @@ export function addTaskInput() {
 export function closeForm(event) {
     pageBg.style.filter = 'none';
     formContainer.style.display = 'none';
-    let form = document.getElementsByTagName('form')[0];
-    form.reset();
-    let tasks = document.getElementsByClassName('tasks')[0];
-    tasks.innerHTML = '';
+    formContainer.innerHTML = '';
 }
 
 function saveNewList(event) {
